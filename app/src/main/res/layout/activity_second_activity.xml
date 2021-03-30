@@ -4,17 +4,109 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Second_activity">
+    android:background="@drawable/gradient"
+    android:padding="16dp"
+    tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:textSize="28sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+    <EditText
+        android:id="@+id/enterWord"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:hint="Enter Word here . . ."
+        android:textColorHint="@android:color/white"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toTopOf="@id/imgButton_speech"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageButton
+        android:id="@+id/imgButton_speech"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="24dp"
+        android:scaleType="fitXY"
+        android:onClick="btnSpeech"
+        android:backgroundTint="@color/background_color"
+        app:layout_constraintBottom_toTopOf="@id/synonym"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/enterWord"
+        app:srcCompat="@drawable/mic" />
+
+
+    <TextView
+        android:id="@+id/synonym"
+        android:layout_width="289dp"
+        android:layout_height="64dp"
+        android:hint="Synonym . . . "
+        android:scrollbars="vertical"
+        android:textColor="#ffffff"
+        android:textColorHint="@android:color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/showDef"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgButton_speech" />
+
+    <TextView
+        android:id="@+id/showDef"
+        android:layout_width="291dp"
+        android:layout_height="182dp"
+        android:hint="Meaning . . . "
+        android:scrollbars="vertical|none"
+        android:textColor="#ffffff"
+        android:textColorHint="@android:color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/findSyn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/synonym"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/findSyn"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/custom_button"
+        android:onClick="sendRequestOnClick2"
+        android:text="Synonym"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/findBtn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/showDef" />
+
+    <Button
+        android:id="@+id/findBtn"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/custom_button"
+        android:onClick="sendRequestOnClick"
+        android:text="Meaning"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@id/findSyn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pronounce"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/pronounce"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="24dp"
+        android:scaleType="fitXY"
+        android:backgroundTint="@color/background_color"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/findBtn"
+        app:srcCompat="@drawable/speaker"
+        tools:ignore="MissingConstraints"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
